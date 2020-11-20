@@ -1,0 +1,79 @@
+\ProvidesPackage{dissertation}
+
+
+
+% Fonts
+\usepackage{textcomp} % nice greek alphabet
+\usepackage{pifont}   % Dingbats
+\usepackage{booktabs}
+\usepackage{amssymb,amsthm,bm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\usepackage{chemformula} % Formula subscripts using \ch{}
+\usepackage[version=4]{mhchem} % Formula subscripts using \ce{}
+
+\usepackage{placeins}
+\usepackage{multirow}
+\usepackage{booktabs} 
+\usepackage[flushleft]{threeparttable}
+\usepackage{placeins}
+\usepackage{color}
+\usepackage{lscape}
+\usepackage{array}
+\usepackage{psfrag}
+\usepackage{longtable}
+\usepackage{braket}
+\usepackage{csquotes}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{hyperref}
+
+%%%Cross reference among chapters%%%%%
+\usepackage{xr}
+\externaldocument[SI:]{./chapters/a8/a8}
+
+%%Reduce space in Table of contents%%%%
+\usepackage{tocloft}
+\renewcommand\cftchapafterpnum{\vskip-5pt}
+\renewcommand\cftsecafterpnum{\vskip-5pt}
+\renewcommand\cftsubsecafterpnum{\vskip-5pt}
+
+
+ 
+\usepackage[backend=biber, style=chem-acs]{biblatex} 
+\addbibresource{./references/chapter-1.bib} 
+\addbibresource{./references/chapter-2.bib}
+\addbibresource{./references/chapter-3.bib}
+\addbibresource{./references/chapter-4.bib}
+\addbibresource{./references/chapter-5.bib}
+\addbibresource{./references/chapter-6.bib}
+\addbibresource{./references/chapter-7.bib}
+\addbibresource{./references/chapter-8.bib} 
+\addbibresource{./references/conclusions.bib}
+\addbibresource{./references/a3.bib}
+\addbibresource{./references/a7.bib}
+\hypersetup{bookmarksnumbered}
+
+\DeclareCiteCommand{\citenum}
+{}
+{\printfield{labelnumber}}
+{}
+{}
+
+% % % % % % linespacing 1.5 % % % %
+\renewcommand{\baselinestretch}{1.2}
+\setlength{\parskip}{1em}
+
+%%%%%Comment text %%%
+\newcommand{\commenttext}[1]{}
+
+%%%%% copy \autocite to \cite to make \cite behaves as \autocite %%%%%
+\let\originalcite\cite
+\renewcommand{\cite}{\autocite}
+
+
+
+ 

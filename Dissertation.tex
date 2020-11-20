@@ -1,0 +1,118 @@
+%\documentclass[showinstructions,faculty=fw,department=che,phddegree=che]{adsphd}
+%\documentclass[showinstructions,faculty=fw,department=che,phddegree=che,doctoralschool=ads]{adsphd}
+%\documentclass[showinstructions,showlabels,coverfontpercent=100,faculty=fw,department=che,phddegree=che]{adsphd}
+%\documentclass[croppedpdf,showinstructions,faculty=fw,department=che,phddegree=che]{adsphd}
+%\documentclass[online,faculty=fw,department=che,phddegree=che]{adsphd}
+%\documentclass[print,bleed,cropmarks,faculty=fw,department=che,phddegree=che]{adsphd} % include bleed for the print service
+%\documentclass[print,faculty=fw,department=che,phddegree=ches]{adsphd}
+\documentclass[final,faculty=fw,department=che,phddegree=che]{adsphd}
+%\documentclass[showinstructions,faculty=fw,department=che,phddegree=che,epub]{adsphd}
+%\documentclass[tothejury,faculty=fw,department=che,phddegree=che]{adsphd}
+
+
+\input{./chapters/covers/covers.tex} 
+
+\input{./chapters/abbreviations/abbreviations}
+
+\usepackage{dissertation}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makefrontcoverXII
+
+\maketitle
+
+\frontmatter % to get \pagenumbering{roman}
+
+\includepreface{preface}
+\includeabstract{abstract}
+\includeabstractnl{abstractnl}
+
+% To create a list of abbreviations, there are 2 options
+% 1. manual creation of list of abbreviations and inclusion as a chapter
+%  \includeabbreviations{abbreviations}
+% 2. automatic generation via the glossary package
+%    \glossary{name=MD,description=molecular dynamics}
+\myprintglossary 
+%\printnoidxglossary[type=\acronymtype, title={List of Abbreviations}]
+
+% To create a list of symbols, there are 2 options
+% 1. include a manually created nomenclature as a chapter
+%    \includenomenclature{nomenclaturechapter}
+% 2. automatic generation via the nomencl package
+%    \nomenclature[cB]{$c_B(\vec{x})$}{Characteristic function of $B$}
+\myprintnomenclature 
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter % to get \pagenumbering{arabic}
+
+% Show instructions on a separate page
+\instructionschapters\cleardoublepage
+
+
+
+\includechapter{chapter-1}  % Introduction
+\includechapter{chapter-2}  % Methods
+\includechapter{chapter-3}  % ScSi2-
+\includechapter{chapter-4}  % TiGe2- 
+\includechapter{chapter-5}  % Vge3-
+\includechapter{chapter-6}  % Cr2O2
+\includechapter{chapter-7}  % CrmOn
+\includechapter{chapter-8}	% CrxMnyOz
+
+
+% Insert here your own chapters
+% Chapters are expected to be in a tex-file with the given name dot
+% tex and in a directory with the given name in the chapters
+% directory.
+
+\includechapter{conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% remove appendix tables and figures from Table of contents
+\let\svaddcontentsline\addcontentsline
+\renewcommand\addcontentsline[3]{%
+  \edef\qtest{#1}%
+  \def\qmatch{lof}%
+  \ifx\qmatch\qtest\else%
+    \def\qmatch{lot}%
+    \ifx\qmatch\qtest\else%
+      \svaddcontentsline{#1}{#2}{#3}%
+  \fi\fi%
+}
+
+%\appendix
+
+
+%%%%%%\includeappendix{a3}    %Supplemets to Chapter 3 ScSi2
+%%%%%\includeappendix{a4}	 %Supplemets to Chapter 4 TiGe2
+%%%%%\includeappendix{a5}    %Supplemets to Chapter 5 VGe3
+%%%%%\includeappendix{a6}	 %Supplemets to Chapter 6 Cr2O2
+%%%%%%\includeappendix{a7}	 %Supplemets to Chapter 7 CrxOy 
+%\includeappendix{a8}    %Supplemets to Chapter 8 CrMnO 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+
+%\includecv{curriculum}
+
+\includepublications{publications}
+
+\makebackcoverXII
+
+\end{document}
+
