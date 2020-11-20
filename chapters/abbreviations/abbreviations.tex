@@ -1,0 +1,79 @@
+
+% for the nomenclature (comment out if you do not use the nomencl package
+\usepackage{nomencl}   % For nomenclature
+\renewcommand{\nomname}{List of Symbols}
+\newcommand{\myprintnomenclature}{%
+  \cleardoublepage%
+  \printnomenclature%
+  \chaptermark{\nomname}
+  \addcontentsline{toc}{chapter}{\nomname} %% comment to exclude from TOC
+}
+\makenomenclature%
+
+% for the list of abbreviations (comment out if you do not use the glossaries package
+%\usepackage{glossaries} % For list of abbreviations
+\usepackage[nonumberlist,acronym,toc,xindy]{glossaries}
+\newcommand{\glossname}{List of Abbreviations}
+\newcommand{\myprintglossary}{%
+  \renewcommand{\glossaryname}{\glossname}
+  \cleardoublepage%
+  \printnoidxglossary[type=\acronymtype, title=\glossname]
+  \chaptermark{\glossname}
+  %\addcontentsline{toc}{chapter}{\glossname} %% comment to exclude from TOC
+}
+
+%\makeglossaries
+\makenoidxglossaries 
+
+
+\newacronym{ade}{ADE}{Adiabatic Detachment Energy}
+\newacronym{ao}{AO}{Atomic Orbital}
+\newacronym{ano}{ANO}{Atomic Natural Orbital}
+\newacronym{aim}{AIM}{Atoms In Molecules}
+\newacronym{casscf}{CASSCF}{Complete Active Space Self-Consistent Field}
+\newacronym{caspt2}{CASPT2}{Complete Active-Space Second-Order Perturbation Theory}
+\newacronym{cc}{CC}{Coupled-Cluster}
+\newacronym{ccd}{CCD}{Coupled-Cluster Doubles}
+\newacronym{csf}{CSF}{Configuration State Function}
+\newacronym{ccsd}{CCSD}{Coupled-Cluster Singles and Doubles}
+\newacronym{de}{DE}{Detachment Energy}
+\newacronym{dmrg}{DMRG}{Density Matrix Renormalization Group}
+\newacronym{felix}{FELIX}{Free Electron Laser for Infrared eXperiments}
+\newacronym{fcf}{FCF}{Franck-Condon Factor}
+\newacronym{fci}{FCI}{Full Configuration Interaction}
+\newacronym{ci}{CI}{Configuration Interaction}
+\newacronym{dft}{DFT}{Density Functional Theory}
+\newacronym{tddft}{TDDFT}{Time Dependent Density Functional Theory}
+\newacronym{gga}{GGA}{Generalized Gradient Approximation}
+\newacronym{gto}{GTO}{Gaussian Type Orbital}
+\newacronym{hf}{HF}{Hartree Fock}
+\newacronym{ie}{IE}{Ionization Energy}
+\newacronym{ir}{IR}{Infrared}
+\newacronym{irpd}{IRPD}{Infrared Photodissociation}
+\newacronym{irmpd}{IRMPD}{Infrared Multiphoton Dissociation}
+\newacronym{lda}{LDA}{Local-Density Approximation}
+\newacronym{lsda}{LSDA}{Local-Spin Density Approximation}
+\newacronym{mcscf}{MCSCF}{Multiconfiguration Self-Consistent Field}
+\newacronym{mrci}{MRCI}{Multireference Configuration Interaction}
+\newacronym{mo}{MO}{Molecular Orbital}
+\newacronym{mps}{MPS}{Matrix Product State}
+\newacronym{nevpt2}{NEVPT2}{N-Electron Valence State Perturbation Theory}
+\newacronym{pe}{PE}{Photoelectron}
+\newacronym{pdos}{PDOS}{Partial Density of States}
+\newacronym{rasscf}{RASSCF}{Restricted Active Space Self-Consistent Field}
+\newacronym{raspt2}{RASPT2}{Restricted Active Space Second-Order Perturbation}
+\newacronym{rccsd}{RCCSD}{Restricted Coupled-Cluster Singles and Doubles}
+\newacronym{rhf}{RHF}{Restricted Hartree-Fock}
+\newacronym{rohf}{ROHF}{Restricted Open-shell Hartree-Fock}
+\newacronym{uhf}{UHF}{Unrestricted Hartree-Fock}
+\newacronym{sd}{SD}{Stater Determinant}
+\newacronym{sto}{STO}{Slater Type Orbital}
+\newacronym{scf}{SCF}{Self-Consistent Field}
+\newacronym{vde}{VDE}{Vertical Detachment Energy}
+\newacronym{homo}{HOMO}{Highest Occupied Molecular Orbital}
+\newacronym{lumo}{LUMO}{Lowest Unoccupied Molecular Orbital}
+\newacronym{xps}{XPS}{X-ray Photoelectron Spectroscopy}
+\newacronym{ups}{UPS}{Ultraviolet Photoelectron Spectroscopy}
+\newacronym{tm}{TM}{Transition Metal}
+\newacronym{tdos}{TDOS}{Total Density of States}
+\newacronym{zpe}{ZPE}{Zero-Point Energy}
